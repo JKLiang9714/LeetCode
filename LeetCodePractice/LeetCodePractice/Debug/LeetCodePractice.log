@@ -1,2 +1,8 @@
 ﻿  LeetCodePractice.cpp
-  LeetCodePractice.vcxproj -> E:\C++Project\LeetCodePractice\Debug\LeetCodePractice.exe
+e:\c++project\leetcode\leetcodepractice\leetcodepractice\leetcodepractice.cpp(135): warning C4018: “>=”: 有符号/无符号不匹配
+e:\c++project\leetcode\leetcodepractice\leetcodepractice\leetcodepractice.cpp(136): warning C4018: “>=”: 有符号/无符号不匹配
+e:\c++project\leetcode\leetcodepractice\leetcodepractice\leetcodepractice.cpp(139): warning C4018: “<”: 有符号/无符号不匹配
+e:\c++project\leetcode\leetcodepractice\leetcodepractice\leetcodepractice.cpp(140): warning C4018: “<”: 有符号/无符号不匹配
+e:\c++project\leetcode\leetcodepractice\leetcodepractice\leetcodepractice.cpp(549): warning C4018: “<”: 有符号/无符号不匹配
+e:\c++project\leetcode\leetcodepractice\leetcodepractice\leetcodepractice.cpp(561): warning C4018: “<”: 有符号/无符号不匹配
+  LeetCodePractice.vcxproj -> E:\C++Project\LeetCode\LeetCodePractice\Debug\LeetCodePractice.exe
