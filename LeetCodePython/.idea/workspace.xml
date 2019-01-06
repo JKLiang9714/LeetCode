@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c2e000e-3c87-49f0-8fce-89f06de741bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../LeetCodeJava/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCodeJava/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodeJava/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LeetCodeJava/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodeJava/out/production/LeetCodeJava/Main$ListNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodeJava/out/production/LeetCodeJava/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/.vs/LeetCodePractice/v15/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/.vs/LeetCodePractice/v15/Browse.VC.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/.vs/LeetCodePractice/v15/ipch/abdd813331820bdc.ipch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/Debug/LeetCodePractice.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/Debug/LeetCodePractice.ilk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/Debug/LeetCodePractice.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/Debug/LeetCodePractice.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/Debug/LeetCodePractice.tlog/CL.command.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/Debug/LeetCodePractice.tlog/CL.read.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/Debug/LeetCodePractice.tlog/CL.write.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/Debug/LeetCodePractice.tlog/LeetCodePractice.lastbuildstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/Debug/LeetCodePractice.tlog/link.command.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/Debug/LeetCodePractice.tlog/link.read.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/Debug/LeetCodePractice.tlog/link.write.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/Debug/LeetCodePractice.tlog/unsuccessfulbuild" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/Debug/stdafx.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/Debug/vc141.idb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/Debug/vc141.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/LeetCodePractice.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/LeetCodePractice.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/LeetCodePractice.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/LeetCodePractice.vcxproj.user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/stdafx.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/stdafx.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LeetCodePractice/LeetCodePractice/targetver.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,13 +10,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/LeetCodePython$main.coverage" NAME="main Coverage Results" MODIFIED="1546757349192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-2014818307">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -58,13 +32,27 @@
           <entry key="Python" value="1" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="382" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="382" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -93,8 +81,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="139" />
-    <option name="y" value="59" />
+    <option name="x" value="242" />
+    <option name="y" value="52" />
     <option name="width" value="1583" />
     <option name="height" value="978" />
   </component>
@@ -120,6 +108,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -135,6 +124,35 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="LeetCodePython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -149,30 +167,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="139" y="59" width="1583" height="978" extended-state="0" />
+    <frame x="242" y="52" width="1583" height="978" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24950755" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25279054" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3292683" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +201,11 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
