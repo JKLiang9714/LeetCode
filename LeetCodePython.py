@@ -118,6 +118,7 @@ class Solution59:
     题意：给定一个正整数n，生成一个n*n的螺旋矩阵，其中元素从1一直到n^2
     题解：用di, dj巧妙地控制了四个方向，di, dj = dj, -di
     """
+
     def generateMatrix(self, n):
         matrix = [[0] * n for _ in range(n)]
         i, j, di, dj = 0, 0, 0, 1
@@ -128,4 +129,29 @@ class Solution59:
             i += di
             j += dj
         return matrix
-        
+
+
+class Solution63:
+    """
+    题意：给定一个m*n的矩阵，其中0代表可以走的路，1代表障碍物。机器人只能往下或往右走，初始位置在矩阵左上角，求可以让机器人走到矩阵右下角的路径的数量
+    题解：dfs比较费时间，考虑动态规划如下：
+        dp[0][0] = 0, if s[0][0] = 1
+        dp[0][0] = 1, if s[0][0] = 0
+        dp[i][j] = 0,                               if s[i][j] = 1
+                 = dp[i - 1][j] + dp[i][j - 1],     if s[i][j] = 0
+    """
+    def uniquePathsWithObstacles(self, obstacleGrid):
+        m = len(obstacleGrid)
+        n = len(obstacleGrid[0])
+        dp = [[0 for i in range(n)] for j in range(m)]
+        dp[0][0] = 0 if obstacleGrid[0][0] == 1 else 1
+        for i in range(m):
+            for j in range(n):
+                if obstacleGrid[i][j] == 1:
+                    dp[i][j] == 0
+                else:
+                    if i-1 >= 0:
+                        dp[i][j] += dp[i-1][j]
+                    if j-1 >= 0:
+                        dp[i][j] += dp[i][j-1]
+        return dp[m-1][n-1]
