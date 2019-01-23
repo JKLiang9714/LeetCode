@@ -155,3 +155,62 @@ class Solution63:
                     if j-1 >= 0:
                         dp[i][j] += dp[i][j-1]
         return dp[m-1][n-1]
+
+
+class Solution64:
+    """
+    题意：给定一个m*n的非负矩阵，矩阵中的数字代表权值，起点在矩阵左上角，只能往右或往下走，求走到矩阵右下角所需的最小路径长度
+    题解：基本的动态规划题，dp[0][0]=grid[0][0]，dp[i][j]=grid[i][j]+min(dp[i-1][j],dp[i][j-1])，第一排和第一列由于没有上/左的格子，需要提前处理
+    """
+    def minPathSum(self, grid):
+        m, n = len(grid), len(grid[0])
+        for i in range(1, n):
+            grid[0][i] += grid[0][i - 1]
+        for i in range(1, m):
+            grid[i][0] += grid[i - 1][0]
+        for i in range(1, m):
+            for j in range(1, n):
+                grid[i][j] += min(grid[i - 1][j], grid[i][j - 1])
+        return grid[-1][-1]
+        
+
+class Solution66:
+    """
+    题意：给定一个非空的个位数数组，这个数组整体代表了一个非负整数。将这个非负整数+1后用个位数数组的形式返回
+    """
+    def plusOne(self, digits):
+        num = 0
+        for i in range(len(digits)):
+            num += digits[i] * pow(10, len(digits) - i - 1)
+        return [int(i) for i in str(num + 1)]
+
+
+class Solution73:
+    """
+    题意：给定一个m*n的矩阵matrix，如果有一个元素是0，则将该元素的所在行和列都变为0。要求in-palce就地操作实现，也就是不使用临时变量，空间复杂度O(1)
+    题解：利用matrix本身记录，首先定义row_flag和column_flag表示矩阵的第一行和第一列是否有0，然后扫描矩阵除了第一行和第一列以外的部分，用第一行和第一列置0来表示有0
+    """
+    def setZeroes(self, matrix):
+        m, n = len(matrix), len(matrix[0])
+        row_flag, col_flag = False, False
+        for i in range(n):
+            if matrix[0][i] == 0:
+                row_flag = True
+        for i in range(m):
+            if matrix[i][0] == 0:
+                col_flag = True
+        for i in range(1,m):
+            for j in range(1,n):
+                if matrix[i][j] == 0:
+                    matrix[i][0] = 0
+                    matrix[0][j] = 0
+        for i in range(1,m):
+            for j in range(1,n):
+                if matrix[i][0] == 0 or matrix[0][j] == 0:
+                    matrix[i][j] = 0
+        if row_flag:
+            for i in range(n):
+                matrix[0][i] = 0
+        if col_flag:
+            for i in range(m):
+                matrix[i][0] = 0
