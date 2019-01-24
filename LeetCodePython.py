@@ -214,3 +214,65 @@ class Solution73:
         if col_flag:
             for i in range(m):
                 matrix[i][0] = 0
+
+
+class Solution74:
+    """
+    题意：给定一个m*n的整数矩阵，其中每行数从左到右升序排列，并且满足每行的第一个数大于上一行的最后一个数，给定一个target，确定target是否在这个矩阵中
+    题解：在[0, row * col - 1]区间上二分，关键在于num = matrix[mid / cols][mid % cols]
+    """
+    def searchMatrix(self, matrix, target):
+        if not matrix or target is None:
+            return False
+        rows, cols = len(matrix), len(matrix[0])
+        low, high = 0, rows * cols - 1
+        while low <= high:
+            mid = int((low + high) / 2)
+            num = matrix[int(mid / cols)][mid % cols]
+            if num == target:
+                return True
+            elif num < target:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return False
+
+
+class Solution79:
+    """
+    题意：给定一个二维list和一个word，判断这个word是否能用二维list中相邻的字母连接而成(不能重复使用)
+    题解：dfs，终止条件是当所有字母找完时返回True，当没找完并且四个方向都不能继续走下去时返回False。找到一个字母后分别向四个方向走，如果其中一个方向返回True则整体为True，走过的位置设为'#'，当四个方向都回来后将'#'重新变回原来的字母
+    """
+    def exist(self, board, word):
+        if len(word) == 0:
+            return False
+        for i in range(len(board)):
+            for j in range(len(board[0])):
+                if self.dfs(board, i, j, word):
+                    return True
+        return False
+    
+    def dfs(self, board, i, j, word):
+        if len(word) == 0:
+            return True
+        if i < 0 or i >= len(board) or j < 0 or j >= len(board[0]) or word[0] != board[i][j]:
+            return False
+        tmp = board[i][j]
+        board[i][j] = '#'
+        res = self.dfs(board, i + 1, j, word[1:]) or self.dfs(board, i, j + 1, word[1:]) or self.dfs(board, i - 1, j, word[1:]) or self.dfs(board, i, j - 1, word[1:])
+        board[i][j] = tmp
+        return res
+
+
+class Solution80:
+    """
+    题意：给定一个有序list，使得其中的数字不能重复出现两次以上，要求in-place做法，返回值为处理后的数组的长度
+    题解：一次遍历
+    """
+    def removeDuplicates(self, nums):
+        i = 0
+        for n in nums:
+            if i < 2 or n > nums[i - 2]:
+                nums[i] = n
+                i += 1
+        return i
