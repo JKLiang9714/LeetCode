@@ -276,3 +276,31 @@ class Solution80:
                 nums[i] = n
                 i += 1
         return i
+
+
+class Solution81:
+    """
+    题意：给定一个list，是由一个有序数组在某一枢纽处旋转得到的，并且其中可能含有重复元素，要求判断target是否在这个list中
+    题解：虽然这个list经过旋转，但是还是可以用二分查找的思想，因为mid的左边或右边一定有一端是有序的。因此只需要在二分查找的时候对此进行判断就行了。另外本题可能有重复值，所以当left，mid和right指向的值都相等时要移动指针来跳出循环
+    """
+    def search(self, nums, target):
+        left = 0
+        right = len(nums) - 1
+
+        while left <= right:
+            mid = int((left + right) / 2)
+            if nums[mid] == target:
+                return True
+            if nums[mid] < nums[right] or nums[mid] < nums[left]:
+                if nums[mid] < target <= nums[right]:
+                    left = mid + 1
+                else:
+                    right = mid - 1
+            elif nums[mid] > nums[left] or nums[mid] > nums[right]:
+                if nums[left] <= target < nums[mid]:
+                    right = mid - 1
+                else:
+                    left = mid + 1
+            else:
+                left += 1
+        return False
