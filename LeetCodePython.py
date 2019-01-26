@@ -304,3 +304,89 @@ class Solution81:
             else:
                 left += 1
         return False
+
+
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+class Solution105:
+    """
+    题意：给定二叉树的前序遍历和中序遍历，输出该二叉树
+    题解：前序遍历也就是根-左-右，中序遍历就是左-根-右。我们用递归的方式，preorder[0]必定是根结点,而这个根结点在inorder中的位置的左边是它的左子树，右边是它的右子树
+    """
+    def buildTree(self, preorder, inorder):
+        if len(preorder) == 0:
+            return None
+        root_node = TreeNode(preorder[0])
+        j = inorder.index(preorder[0])
+        root_node.left = self.buildTree(preorder[1:j+1], inorder[0:j])
+        root_node.right = self.buildTree(preorder[j+1:], inorder[j+1:])
+        return root_node
+
+
+class Solution106:
+    """
+    题意：给定二叉树的中序遍历和后序遍历，输出该二叉树
+    题解：中序遍历是左-根-右，后序遍历是左-右-根。preorder[-1]必定是根结点，然后就和105题类似了
+    """
+    def buildTree(self, inorder, postorder):
+        if len(postorder) == 0:
+            return None
+        root_node = TreeNode(postorder[-1])
+        j = inorder.index(postorder[-1])
+        root_node.left  = self.buildTree(inorder[0:j], postorder[0:j])
+        root_node.right = self.buildTree(inorder[j+1:],postorder[j:-1])
+        return root_node
+
+
+class Solution119:
+    """
+    题意：杨辉三角问题，给定k，要求输出杨辉三角的第k行
+    题解：虽然看似是等腰三角形，但其实我们可以把它看做一个直角三角形，也就是矩阵的下半部分
+    这题如果用O(k^2)的空间的话非常简单，抓住t[i][j] = t[i-1][j] + t[i-1][j-1]即可
+    题干给了一个挑战，是用O(k)的空间完成，其实也非常简单，只要设置两个临时变量
+    分别存储我们要修改的位置的上一层的这一位和前一位即可(逻辑上的上层，实际上只有一维数组)
+    """
+    def getRow(self, rowIndex):
+        size = rowIndex + 1
+        tri = [0] * size
+        tri[0] = 1
+
+        for _ in range(1, size):
+            t1 = 1
+            for j in range(1, size):
+                t2 = tri[j]
+                tri[j] += t1
+                t1 = t2
+        return tri
+
+
+class Solution120:
+    """
+    题意：给定一个三角形的list，求出从顶到底的最短路径
+    题解：经典DP题，算式为 tri[n-1][i] += min(tri[n][i], tri[n][i+1])
+    """
+    def minimumTotal(self, triangle):
+        if not triangle:
+            return 
+        for i in range(len(triangle)-2, -1, -1):
+            for j in range(len(triangle[i])):
+                triangle[i][j] += min(triangle[i+1][j], triangle[i+1][j+1])
+        return triangle[0][0]
+
+
+class Solution152:
+    """
+    题意：给定一个list，找出其中一个连续的子数组，使得其中所有数的乘积最大
+    题解：因为最小值乘负数会变最大，所以用两个变量存储当前最大值和最小值
+    """
+    def maxProduct(self, nums):
+        maximum = big = small = nums[0]
+        for n in nums[1:]:
+            big, small = max(n, n*big, n*small), min(n, n*big, n*small)
+            maximum = max(maximum, big)
+        return maximum
