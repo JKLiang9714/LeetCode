@@ -390,3 +390,77 @@ class Solution152:
             big, small = max(n, n*big, n*small), min(n, n*big, n*small)
             maximum = max(maximum, big)
         return maximum
+
+
+class Solution153:
+    """
+    题意：给定一个排序过的list，在某一结点旋转过，找出其中的最小值
+    题解：类似81题，还是用二分查找的思想。虽然list被旋转过，但是left-mid和mid-right其中的一段必定是有序的
+    """
+    def findMin(self, nums):
+        left, right = 0, len(nums) - 1
+        mid = (left + right) // 2
+        while left < right:
+            if nums[right] < nums[mid]:
+                left = mid + 1
+            else:
+                right = mid
+            mid = (left + right) // 2
+        return min(nums[left], nums[right])
+
+
+class Solution167:
+    """
+    题意：给定一个排序过的list，从中找到和等于target的两个数的位置，返回它们以1为起始值的坐标
+    题解：双指针的思想，比较简单。值得一提的是，如果需要从无序数组中找到是否有两数之和等于某一target，也是采用先排序再双指针的方法
+    """
+    def twoSum(self, numbers, target):
+        l, r = 0, len(numbers) - 1
+        while l < r:
+            if numbers[l] + numbers[r] > target:
+                r -= 1
+            elif numbers[l] + numbers[r] < target:
+                l += 1
+            else:
+                break
+        ans = [l+1, r+1]
+        return ans
+
+
+class Solution189:
+    """
+    题意：给定一个list和一个k，使这个list旋转k步
+    题解：利用python的切片即可
+    """
+    def rotate(self, nums, k):
+        l = len(nums)
+        k %= l
+        nums[:] = nums[l-k:] + nums[:l-k]
+
+
+class Solution209:
+    """
+    题意：给定一个list和一个正数s，找到list中和大于等于s的最小连续区间的长度。如果没有则返回0
+    题解：双指针法，用一个滑动的窗口去匹配，如果窗口内的值大于等于s则左移左边框，否则右移右边框，直到右边框到达数组底部并且窗口值小于s位置
+    """
+    def minSubArrayLen(self, s, nums):
+        if sum(nums) < s:
+            return 0
+        elif max(nums) >= s:
+            return 1
+        l, r = 0, 1
+        add = nums[l] + nums[r]
+        min_windows = len(nums)
+
+        while l < len(nums):
+            if add >= s:
+                min_windows = min(min_windows, r - l + 1)
+                add -= nums[l]
+                l += 1
+            else:
+                if r < len(nums)-1:
+                    r += 1
+                    add += nums[r]
+                else:
+                    break
+        return min_windows
