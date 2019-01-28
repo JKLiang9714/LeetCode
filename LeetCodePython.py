@@ -464,3 +464,76 @@ class Solution209:
                 else:
                     break
         return min_windows
+
+
+class Solution216:
+    """
+    题意：给定一个数k和一个数n，要求找到1-9内的k个数，且满足它们的和为n的所有可能组合
+    题解：
+    回溯法：保存当前步骤，如果是一个解就输；维护状态，使搜索路径（含子路径）尽量不重复。必要时，应该对不可能为解的部分进行剪枝
+    递归函数的开头写好跳出条件，满足条件才将当前结果加入总结果中
+    已经拿过的数不再拿
+    遍历过当前结点后，为了回溯到上一步，要去掉已经加入到结果list中的当前结点
+    代入到这题中，每一个dfs都遍历1-9中当前index后面的数，这确保了已经拿过的数不再拿。进入下一层dfs，并令k-1，n-nums[index]，跳出条件是k<0或n<0，满足条件是k==0且n==0
+    """
+    def combinationSum3(self, k, n):
+        res = []
+        self.dfs(range(1,10), k, n, 0, [], res)
+        return res
+    
+    def dfs(self, nums, k, n, index, path, res):
+        if k < 0 or n < 0: # backtracking 
+            return 
+        if k == 0 and n == 0: 
+            res.append(path)
+        for i in range(index, len(nums)):
+            self.dfs(nums, k-1, n-nums[i], i+1, path+[nums[i]], res)
+
+
+class Solution228:
+    """
+    题意：给定一个有序且无重复数字的list，将其中连续范围的数字合并后返回
+    题解：根据题意，我们需要确认的其实就是每段连续区间的首尾数字。首数字可能是list的第一个数或是前一个数和它不连续的数，尾数字可能是list的最后一个数或是后一个数和它不连续的数。并且每一个尾数字一定对应着一段连续区间，将这段区间存入一个字符list即可
+    """
+    def summaryRanges(self, nums):
+        summary = []
+        start = 0
+        end = 0
+        for i in range(len(nums)):
+            if i == 0 or nums[i-1]+1 != nums[i]:
+                start = nums[i]
+            if i == len(nums)-1 or nums[i+1]-1 != nums[i]:
+                end = nums[i]
+                if start == end:
+                    summary.append(str(start))
+                else:
+                    summary.append(str(start) + '->' + str(end))
+        return summary
+
+
+class Solution229:
+    """
+    题意：给定一个长度为n的list，找到其中出现次数大于[n/3]的所有数。要求时间复杂度O(n)，空间复杂度O(1)
+    题解：
+    使用dict存储这个list中每个数出现的次数，然后将其中次数大于[n/3]的存入一个list。但是则不符合空间复杂度的要求
+    查阅solution后发现这题可以使用Boyer-Moore多数投票算法解决。这是一种寻找"多数元素"的好方法，基本思想是建立标志位和count，如果匹配到的数字不等于标志位则让count-1，否则count+1，如果count为0时更换标志位。因为本题要求的是出现次数大于[n/3]的所有数，也就是最多可能有两个数，因此要建立两组标志位和count
+    """
+    def majorityElement(self, nums):
+        count1, count2, tmp1, tmp2 = 0, 0, 0, 1
+        for i in nums:
+            if i == tmp1:
+                count1 += 1
+            elif i == tmp2:
+                count2 += 1
+            elif count1 == 0:
+                tmp1 = i
+                count1 = 1
+            elif count2 == 0:
+                tmp2 = i
+                count2 = 1
+            else:
+                count1 -= 1
+                count2 -= 1
+
+        ans = [n for n in (tmp1, tmp2) if nums.count(n) > len(nums) // 3]
+        return ans
